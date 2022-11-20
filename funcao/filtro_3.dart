@@ -1,4 +1,4 @@
-//Função Filter = Criar proprio WHERE - receber como parametro uma uncao e em cima da função realziar a logica interna
+//Função Filter = Criar proprio WHERE - receber como parametro uma função e em cima da função realizar a lógica interna
 
 List<E> filtrar<E>(List<E> lista, bool Function(E) fn) {
   List<E> listaFiltrada = [];

@@ -1,4 +1,4 @@
-//Map Reduce = funcao .where filtra, função .map transforma, o .reduce transforma uma lista em qualquer tipo
+//Map Reduce = funcao .where filtra, função .map transforma. o reduce transforma uma lista em qualquer tipo
 
 main() {
   var notas = [7.3, 5.4, 7.7, 8.1, 5.5, 4.9, 9.1, 10.0];
