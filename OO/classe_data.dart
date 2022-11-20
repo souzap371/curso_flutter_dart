@@ -5,26 +5,54 @@
 //Estudar modelagem de sistemas.
 //A notção ".", serve para acessar características de um objeto criado.
 //A nomeclatura Objeto e Instancia são semelhantes
+//Função dentro de classe é chamado de metodo.
+//Construtor é um método
+//Colchetes no construtor , transforma os parametros em opcionais
 
 class Data {
   //Definindo 3 atributos DD MM YYYY
-  int dia = 1;
-  int mes = 1;
-  int ano = 2019;
+  int? dia;
+  int? mes;
+  int? ano;
+  //Contrutor 1
+  //Data(int dia, int mes, int ano) {
+  //  this.dia = dia;
+  //  this.mes = mes;
+  //  this.ano = ano;
+  //}
+
+  // 2ª forma de montar o Construtor
+  Data([this.dia = 1, this.mes = 1, this.ano = 1970]);
+
+//Metodo "obterFormatada"
+  String obterFormatada() {
+    return "$dia/$mes/$ano";
+  }
+
+  String toString() {
+    return obterFormatada();
+  }
 }
 
 main() {
   //Criação de variavel, recebendo new NomeDaClasse();
-  var dataAniversario = new Data();
-  dataAniversario.dia = 3;
-  dataAniversario.mes = 10;
-  dataAniversario.ano = 2020;
+  var dataAniversario = new Data(3, 10, 2020);
 
-  Data dataCompra = Data();
+  Data dataCompra = Data(1, 1, 1970);
   dataCompra.dia = 23;
   dataCompra.mes = 12;
   dataCompra.ano = 2021;
 
-  print("${dataAniversario.dia}/${dataAniversario.mes}/${dataAniversario.ano}");
-  print("${dataCompra.dia}/${dataCompra.mes}/${dataCompra.ano}");
+  String d1 = dataAniversario.obterFormatada();
+
+  print("A data do aniversário é $d1");
+  print("A data da compra é ${dataCompra.obterFormatada()}");
+
+  print(dataCompra);
+  print(dataCompra.toString());
+
+  print(new Data());
+  print(Data(31));
+  print(Data(31, 12));
+  print(Data(31, 12, 2021));
 }
